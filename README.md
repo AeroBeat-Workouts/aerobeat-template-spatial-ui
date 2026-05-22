@@ -11,6 +11,26 @@ This template stays intentionally bounded:
 - Repos created from this template should implement a concrete spatial adapter, not redefine the contract.
 - Native 2D bridge work belongs in `aerobeat-input-core`, not in repos generated from this template.
 
+## Phase 1 boundary-freeze status
+
+This repository now includes the minimum scaffolding needed to template the Phase 1 ownership boundary correctly.
+
+That currently means:
+
+- placeholder runtime/configuration classes under `src/template/`
+- a boundary note in `docs/phase-1-boundary-freeze.md`
+- tests that pin `aerobeat-input-core` as the contract owner
+- tests and docs that pin `aerobeat-spatial-ui-core` as the shared helper-layer owner
+- an intentionally inert template surface that downstream repos can replace with real provider behavior later
+
+Current non-goals for this phase:
+
+- no concrete adapter runtime behavior here
+- no canonical interaction contract definitions here
+- no native 2D bridge logic here
+- no shared cross-provider helper ownership here
+- no direct extraction of proof-scene behavior into the template
+
 ## 📋 Repository Details
 
 - **Type:** Spatial UI Adapter Template
@@ -19,6 +39,9 @@ This template stays intentionally bounded:
   - `aerobeat-input-core` (canonical UI interaction contract)
   - `aerobeat-spatial-ui-core` (shared spatial provider helpers)
   - `gut` (repo-local validation)
+- **Phase 1 template scaffolding:**
+  - `src/template/` (placeholder runtime/configuration surface for downstream concrete adapters)
+  - `docs/phase-1-boundary-freeze.md` (repo boundary contract)
 - **Intended downstream examples:**
   - `aerobeat-spatial-ui-mouse`
   - future `aerobeat-spatial-ui-touch`
@@ -82,4 +105,5 @@ godot --headless --path .testbed --script addons/gut/gut_cmdln.gd \
 - The current template baseline pins the canonical UI interaction contract, the shared spatial helper layer, and GUT.
 - Repo-local unit tests live under `.testbed/tests/`.
 - The current package shape is consumed from the repo root (`subfolder: "/"`) for downstream installs.
+- `src/template/` exists only to template the Phase 1 ownership boundary; it is not a real adapter implementation.
 - Repos created from this template should publish concrete spatial-provider behavior without expanding into new contract ownership.
