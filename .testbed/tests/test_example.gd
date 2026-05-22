@@ -1,10 +1,10 @@
 extends GutTest
 
 func before_all():
-	gut.p("Starting Input Driver Tests...")
+	gut.p("Starting Spatial UI Template Tests...")
 
 func after_all():
-	gut.p("Finished Input Driver Tests.")
+	gut.p("Finished Spatial UI Template Tests.")
 
 func test_sanity_check():
 	assert_eq(1, 1, "Math should work")
