@@ -42,7 +42,7 @@ Current non-goals for this template:
 - **Current baseline dependencies:**
   - `aerobeat-input-core` (canonical UI interaction contract)
   - `aerobeat-spatial-ui-core` (shared spatial provider helpers)
-  - `gut` (repo-local validation)
+  - `aerobeat-vendor-godot-unit-test` (repo-local validation)
 - **Template scaffolding:**
   - `src/template/` (placeholder runtime/configuration surface for downstream concrete adapters)
   - `docs/phase-1-boundary-freeze.md` (repo boundary contract)
@@ -109,7 +109,7 @@ godot --headless --path .testbed --import
 From the repo root:
 
 ```bash
-godot --headless --path .testbed --script addons/gut/gut_cmdln.gd \
+godot --headless --path .testbed --script addons/aerobeat-vendor-godot-unit-test/gut_cmdln.gd \
   -gdir=res://tests \
   -ginclude_subdirs \
   -gexit
